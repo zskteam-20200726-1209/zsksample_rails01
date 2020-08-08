@@ -92,7 +92,7 @@ RSpec.describe '/users', type: :request do
     end
   end
 
-  describe 'POST /create' do
+  xdescribe 'POST /create' do
     context 'with valid parameters' do
       it 'creates a new User' do
         expect do
@@ -120,7 +120,7 @@ RSpec.describe '/users', type: :request do
     end
   end
 
-  describe 'PATCH /update' do
+  xdescribe 'PATCH /update' do
     context 'with valid parameters' do
       let(:new_attributes) do
         skip('Add a hash of attributes valid for your model')
@@ -150,7 +150,7 @@ RSpec.describe '/users', type: :request do
     end
   end
 
-  describe 'DELETE /destroy' do
+  xdescribe 'DELETE /destroy' do
     it 'destroys the requested user' do
       user = User.create! valid_attributes
       expect do
