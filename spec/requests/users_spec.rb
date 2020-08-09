@@ -15,8 +15,13 @@ require 'rails_helper'
 RSpec.describe '/users', type: :request do
   # User. As you add validations to User, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { FactoryBot.create(:user) }
-  let(:invalid_attributes) { FactoryBot.build(:user, name: nil, email: 'suzuki@example.com') }
+  let(:valid_attributes) do
+    skip('Add a hash of attributes valid for your model')
+  end
+
+  let(:invalid_attributes) do
+    skip('Add a hash of attributes invalid for your model')
+  end
 
   describe 'GET /index' do
     before do
@@ -92,7 +97,12 @@ RSpec.describe '/users', type: :request do
     end
   end
 
-  xdescribe 'POST /create' do
+  
+  # -------------------------------------
+
+
+
+  describe 'POST /create' do
     context 'with valid parameters' do
       it 'creates a new User' do
         expect do
@@ -120,7 +130,7 @@ RSpec.describe '/users', type: :request do
     end
   end
 
-  xdescribe 'PATCH /update' do
+  describe 'PATCH /update' do
     context 'with valid parameters' do
       let(:new_attributes) do
         skip('Add a hash of attributes valid for your model')
@@ -150,7 +160,7 @@ RSpec.describe '/users', type: :request do
     end
   end
 
-  xdescribe 'DELETE /destroy' do
+  describe 'DELETE /destroy' do
     it 'destroys the requested user' do
       user = User.create! valid_attributes
       expect do
