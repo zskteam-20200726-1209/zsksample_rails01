@@ -10,5 +10,13 @@
   <%= @micropost.user_id %>
 </p>
 
+<% if @micropost.image.attached? %>
+  <p style="width:200px;height:200px;">
+    <strong>Image:</strong>
+      <%= image_tag @micropost.image, style: 'width:100%; height:100%' %>
+  </p>
+<% end %>
+
+<br>
 <%= link_to 'Edit', edit_micropost_path(@micropost) %> |
 <%= link_to 'Back', microposts_path %>
